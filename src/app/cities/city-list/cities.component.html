@@ -1,0 +1,13 @@
+<div class="caption">Cities</div>
+<div id="table">
+  <div class="header-row row">
+    <span class="cell primary">City name</span>
+    <span class="cell">Country</span>
+    <span class="cell">Is permission required?</span>
+  </div>
+  <div class="row" *ngFor="let city of cities$ | async" [class.selected]="city.id === selectedId">
+    <span class="cell primary" data-label="Cities"><a [routerLink]="['/city', city.id]">{{city.name}}</a></span>
+    <span class="cell" data-label="Country"><a [routerLink]="['/city', city.id]">{{city.country}}</a></span>
+    <span class="cell" data-label="Is permission required?"><a [routerLink]="['/city', city.id]">{{city.permissionNeeded}}</a></span>
+  </div>
+</div>
